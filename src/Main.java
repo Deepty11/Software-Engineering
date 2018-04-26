@@ -8,8 +8,16 @@ public class Main {
 
 	}
 	public static void Options(){
+		String name,record;
+		int age;
+		
 		Scanner scan= new Scanner (System.in);
 		System.out.println("****Welcome to the Medication Field!!****");
+		System.out.println("Please enter the detail of patient:");
+		System.out.println("Name:");
+		name=scan.nextString();
+		System.out.println("Age:");
+		
 		System.out.println("Options:");
 		
 		System.out.println("1.Current Medication");
