@@ -17,6 +17,7 @@ public class Main {
 		System.out.println("Name:");
 		name=scan.nextString();
 		System.out.println("Age:");
+		age=scan.nextInt();
 		
 		System.out.println("Options:");
 		
@@ -63,6 +64,7 @@ public class Main {
 		}
 		else{
 			
+			formulary();
 		}
 	}
 	public static void getDose(){
@@ -89,6 +91,21 @@ public class Main {
 		else{
 			Options();
 		}
+	}
+	
+	
+	public static void formulary()
+	{
+		getDose();
+		String newMedi;
+		Scanner scan= new Scanner (System.in);
+		newMed=scan.next();
+		addElement(newMed);
+		
+		System.out.println("New medicine:");
+		
+		
+		
 	}
 
 }
