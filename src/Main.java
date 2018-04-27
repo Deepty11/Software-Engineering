@@ -4,9 +4,10 @@ import java.util.Enumeration;
 public class Main {
 
 	public static void main(String[] args) {
-		Options();
+		Options();    //function to show userinterface
 
 	}
+        
 	public static void Options(){
 		String name,record;
 		int age;
@@ -25,7 +26,7 @@ public class Main {
 		System.out.println("2.New Medication");
 		System.out.println("3.Formulary Medication");
 		int c;
-		c=scan.nextInt();
+		c=scan.nextInt();       //Takes choice input
 	    Vector<String> drugs= new Vector<String>(6);
 	    drugs.add("Paracetamol");
 	    drugs.add("Tylenol");    //drugs name
@@ -36,7 +37,7 @@ public class Main {
 	    
 	    
 		if(c==1){
-			getDose();
+			getDose();   // if chooses first one, then calls getDose() function
 			
 		}
 		else if(c==2){
@@ -67,7 +68,7 @@ public class Main {
 			formulary();
 		}
 	}
-	public static void getDose(){
+	public static void getDose(){    // getDose() function implemented
 		System.out.println("Want to check the dose?");
 		System.out.println("Enter the dose:");
 		Scanner scan= new Scanner(System.in);
@@ -75,7 +76,7 @@ public class Main {
 		n= scan.nextFloat();
 		confirmPrescription();
 	}
-	public static void confirmPrescription()
+	public static void confirmPrescription()   // confirmPrescription() function implemented
 	{
 		Scanner scan= new Scanner(System.in);
 		System.out.println("Are you sure to save this as Prescription?(select from 1/2)");
@@ -94,7 +95,7 @@ public class Main {
 	}
 	
 	
-	public static void formulary()
+	public static void formulary()   //formulary() function implemented
 	{
 		getDose();
 		String newMedi;
