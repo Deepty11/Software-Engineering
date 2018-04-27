@@ -8,7 +8,7 @@ public class Main {
 
 	}
         
-	public static void Options(){
+	public static void Options(){ //options function implemented
 		String name,record;
 		int age;
 		
