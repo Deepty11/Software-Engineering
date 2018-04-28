@@ -9,15 +9,15 @@ public class Main {
 	}
         
 	public static void Options(){ //options function implemented
-		String name,record;
+		String name,record;//patient's record
 		int age;
 		
 		Scanner scan= new Scanner (System.in);
 		System.out.println("****Welcome to the Medication Field!!****");
 		System.out.println("Please enter the detail of patient:");
-		System.out.println("Name:");
+		System.out.println("Enter Patient's Name:");
 		name=scan.nextString();
-		System.out.println("Age:");
+		System.out.println("Enter Patient's Age:");
 		age=scan.nextInt();
 		
 		System.out.println("Options:");
@@ -28,6 +28,7 @@ public class Main {
 		int c;
 		c=scan.nextInt();       //Takes choice input
 	    Vector<String> drugs= new Vector<String>(6);
+	    System.out.println("Add drugs name : ")
 	    drugs.add("Paracetamol");
 	    drugs.add("Tylenol");    //drugs name
 	    drugs.add("Advil");
@@ -42,7 +43,7 @@ public class Main {
 		}
 		else if(c==2){
 			Enumeration en= drugs.elements();
-			System.out.println("Choose from the following medications:");
+			System.out.println("Choose from the following medications:");//search the drugs
 			int i=1;
 			while(en.hasMoreElements()){
 				System.out.println(i+" " + en.nextElement());
@@ -51,7 +52,7 @@ public class Main {
 			String choose= new String();
 			choose=scan.next();
 			int k=0;
-			while(!drugs.isEmpty()){
+			while(!drugs.isEmpty()){//drugs comparability
 				if(choose.equals(drugs.get(k))){
 					System.out.println("Drugs matched!");
 					getDose();
@@ -59,18 +60,19 @@ public class Main {
 					break;
 					
 				}
+				
 				k++;
-			}
+			}//if not matched
 			
 		}
 		else{
 			
-			formulary();
+			formulary();//if drug is not matched call formulary function
 		}
 	}
 	public static void getDose(){    // getDose() function implemented
 		System.out.println("Want to check the dose?");
-		System.out.println("Enter the dose:");
+		System.out.println("Enter the dose:");//to check the dose first enter a dose
 		Scanner scan= new Scanner(System.in);
 		float n;
 		n= scan.nextFloat();
@@ -84,12 +86,15 @@ public class Main {
 		System.out.println("2.Change");
 		String ch= new String();
 		ch= scan.next();
-		if(ch.equals("1")){
+		if(ch.equals("1")){ //if prescription is confirmed then ok 
 			System.out.println("Changes saved!");
 			
 			
 		}
-		else{
+		else{//if not ok then go to options() function
+			system.out.println("Prescription is not correct !");
+			System.out.println("We need to add medicine ");
+			formulary();
 			Options();
 		}
 	}
@@ -100,10 +105,11 @@ public class Main {
 		getDose();
 		String newMedi;
 		Scanner scan= new Scanner (System.in);
-		newMed=scan.next();
+		//newMed=scan.next();
 		addElement(newMed);
 		
 		System.out.println("New medicine:");
+		newMed=scan.next();//add medicine
 		
 		
 		
